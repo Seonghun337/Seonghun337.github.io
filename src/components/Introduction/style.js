@@ -1,36 +1,11 @@
+import Image from "gatsby-image"
 import styled from 'styled-components';
 
-// export const ProfileImage = styled.div`
-//     width: 134px;
-//     height: 178px;
-//     background: #F0F0F0;
-//     margin: auto 60px;
-// `
 
-// export const ProfileText = styled.div`
-//     width: 400px;
-//     font-size: 13px;
-//     font-weight: 200;
-//     line-height: 19px;
-// `
-
-// export const Wrapper = styled.div`
-//     margin: 45px auto;
-//     display:flex;
-//     justify-content: center;
-//     align-items: center;
-
-//     @media (max-width: 480px){
-//         flex-direction:column;
-//     }
-// `
-
-
-export const ProfileImage = styled.div`
+export const ProfileImage = styled(Image)`
     min-width: 134px;
     height: 178px;
-    background: #F0F0F0;
-
+    margin:0 50px;
 `
 
 export const ProfileText = styled.div`
