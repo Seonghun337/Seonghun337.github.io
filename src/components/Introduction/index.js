@@ -8,7 +8,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 const Introduction = () => {
     const aboutQuery = graphql`
         query{
-            markdownRemark(frontmatter: {category: {eq: "introduction"}}) {
+            markdownRemark(frontmatter: {category: {eq: "introduction metadata"}}) {
                 frontmatter {
                     title
                     profileText

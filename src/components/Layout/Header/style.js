@@ -33,7 +33,7 @@ export const Wrapper = styled.div
 background-color: #F7FAFC;
 // border: 1px solid;
 
-width: 720px;
+// width: 720px;
 /*    margin-top:0px;*/
 margin: 0px auto;
 padding: 0px;

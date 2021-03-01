@@ -4,8 +4,8 @@ import styled from 'styled-components';
 export const StyledContainer = styled.div
 `
     width: 100%;
-    max-width: 720px;
-
+    // max-width: 720px;
+    max-width: ${({theme}) => theme.size.validWidth}px;
 `;
 
 export const Background = styled.div
@@ -20,7 +20,7 @@ export const Background = styled.div
     flex-direction: column;
     align-items: center;
 
-    @media screen and (max-width: 480px){
+    @media screen and (max-width: 420px){
             width: auto;
     }
 `

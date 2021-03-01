@@ -38,7 +38,6 @@ class Footer extends Component{
                         <Icon.Github
                             width="40"
                             height="40"
-                            
                         />
                     </ContactIcon>
 

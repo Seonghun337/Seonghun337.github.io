@@ -18,8 +18,8 @@ export const Background = styled.div
 export const Wrapper = styled.div
 `
     // border: 1px solid;
-    width: 720px;
-    @media (max-width: 480px){
+    // width: ${({theme}) => theme.size.validWidth}px;
+    @media (max-width: ${({theme}) => theme.size.validWidth}px;){
         width: auto;
     }
     

@@ -23,7 +23,7 @@ export const Wrapper = styled.div`
     align-items: center;
     padding: auto 20px;
 
-    @media (max-width: 480px){
+    @media (max-width: ${({theme}) => theme.size.validWidth}px){
         flex-direction:column;
     }
 `
