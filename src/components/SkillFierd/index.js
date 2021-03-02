@@ -11,7 +11,6 @@ const Wrapper = styled.div`
 
     display:flex;
     flex-wrap:wrap;
-    justify-content: space-between; //
     align-content: space-around;
 `
 
@@ -39,8 +38,9 @@ const SkillFierd = () => {
         }
     `
 
-    const metadata = useStaticQuery(skillsQuery).markdownRemark.frontmatter;
-    const data = useStaticQuery(skillsQuery).allMarkdownRemark.edges;
+    const queryResult = useStaticQuery(skillsQuery)
+    const metadata = queryResult.markdownRemark.frontmatter;
+    const data = queryResult.allMarkdownRemark.edges;
 
     return(
         <Container>

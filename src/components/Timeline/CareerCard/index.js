@@ -1,46 +1,73 @@
 import React, { Component } from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import styled from 'styled-components';
-import CardContent from './CardContent';
 
 
 const Wrapper = styled.div`
-    width: 100%;
-
-    position: relative;
-    display:flex;
-    justify-content:center;
-    padding: auto;
-`
-
-
-const TimeDot = styled.div`
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    border: 1.5px solid ${({theme}) => theme.colors.mainColor3};
-    background-color: ${({theme}) => theme.colors.white};
-
-
-    position: absolute;
-    z-index: 2;
-    top:22px;
-    transform:translateX(-50%);
-    left:20%;
-    @media screen and (min-width: ${({theme}) => theme.size.validWidth}px){
-        left:50%;
-    }
-
-    
-`
-
-const Blank = styled.div`
     width:50%;
-    height:auto;
+    box-sizing: border-box;
+    padding: 20px;
 
 
     @media screen and (max-width: ${({theme}) => theme.size.validWidth}px){
-        display:none;
+        width:80%;
+        margin:0 auto;
+        padding: 20px 0 0 80px;
+    }
+
+`
+
+const Date = styled.div`
+    width:146px;
+    height: 17px;
+    border-radius: 9px;
+    border: 1px solid ${({theme}) => theme.colors.mainColor2};
+
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    font-size: 11px;
+    color: ${({theme}) => theme.colors.fontColorLight};
+
+    @media screen and (min-width: ${({theme}) => theme.size.validWidth}px){
+        ${props => {
+            if(props.isLeft){
+                return `
+                    margin: auto 0 auto auto;
+                `;
+            }
+        }};
+    }
+`
+
+const Title = styled.div`
+    margin: 8px auto;
+    font-size: 16px;
+
+    @media screen and (min-width: ${({theme}) => theme.size.validWidth}px){
+        ${props => {
+            if(props.isLeft){
+                return `
+                    text-align: right;
+                    clear: both;
+                `
+            }
+        }};
+    }
+`
+
+const Desc = styled.div`
+    margin: 12px auto;
+    font-size: 12px;
+
+    @media screen and (min-width: ${({theme}) => theme.size.validWidth}px){
+        ${props => {
+            if(props.isLeft){
+                return `
+                    text-align: right;
+                `;
+            }
+        }};
     }
 `
 
@@ -48,35 +75,19 @@ const Blank = styled.div`
 const CareerCard = (props) => {
 
     return(
-        <Wrapper>
+        <Wrapper isBlank={props.isBlank}>
             {
-                props.isLeft
-                ? (
-                    <>
-                        <CardContent
-                            isLeft={true}
-                            title={props.title}
-                            desc={props.desc}
-                            startDate={props.startDate}
-                            endDate={props.endDate}
-                        />
-                        <TimeDot/>
-                        <Blank/>
-                    </>
-                )
-                : (
-                    <>
-                        <Blank/>
-                        <TimeDot/>
-                        <CardContent
-                            title={props.title}
-                            desc={props.desc}
-                            startDate={props.startDate}
-                            endDate={props.endDate}
-                        />
-                    </>
-                )
+            props.isLeft
+            ? (<Date isLeft={true}>{props.startDate}</Date>)
+            : (<Date>{props.startDate} - {props.endDate}</Date>)
             }
+            <Title isLeft={props.isLeft}>
+                {props.title}   
+            </Title> 
+            <Desc isLeft={props.isLeft}>
+                {props.desc}
+            </Desc>
+
         </Wrapper>
     );
     

@@ -7,7 +7,14 @@ const Title = styled.h1
     font-weight: 400;
     width: 100%;
     display: flex;
-    justify-content: center;
+    
+    ${props => {
+        if(!props.isLeft){
+            return `
+                justify-content: center;
+            `;
+        }
+    }};
     margin: 30px auto;
 `
 
@@ -16,7 +23,7 @@ const Title = styled.h1
 class IntroTitle extends Component{
     render(){
         return(
-            <Title>
+            <Title isLeft={this.props.isLeft}>
                 {this.props.title}
             </Title>
         );

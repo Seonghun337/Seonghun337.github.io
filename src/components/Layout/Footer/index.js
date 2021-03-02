@@ -30,7 +30,7 @@ const FooterText = styled.div`
 class Footer extends Component{
     render(){
         return(
-            <Container background="true">
+            <Container background={true}>
                 <IconWrapper>
                     <ContactIcon
                         href="https://github.com/Seonghun337"

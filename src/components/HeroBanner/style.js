@@ -5,7 +5,6 @@ export const Background = styled.div
 `
     background-color: #F7FAFC;
     width: 100%;
-
     
     margin: 0px;
     padding: 0px;
@@ -17,8 +16,6 @@ export const Background = styled.div
 
 export const Wrapper = styled.div
 `
-    // border: 1px solid;
-    // width: ${({theme}) => theme.size.validWidth}px;
     @media (max-width: ${({theme}) => theme.size.validWidth}px;){
         width: auto;
     }
@@ -27,12 +24,12 @@ export const Wrapper = styled.div
 
 export const Carousel = styled.div
 `
-    background-color: yellow;
-
-    height: 350px;
-    
+    height: 350px;    
     margin-top: 80px;
     margin-bottom: 60px;
+
+    overflow: hidden;
+
 `
 
 export const Banner = styled.div

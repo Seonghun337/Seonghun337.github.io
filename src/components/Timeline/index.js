@@ -6,8 +6,6 @@ import CareerCard from './CareerCard';
 import IntroTitle from '../ui/IntroTitle';
 import Saparator from '../ui/Saparator';
 
-import {useMediaQuery} from "react-responsive"
-
 
 
 const Wrapper = styled.div`
@@ -38,6 +36,46 @@ const VerticalLine = styled.div`
 `
 
 
+const LayerWrapper = styled.div`
+    width: 100%;
+
+    position: relative;
+    display:flex;
+    justify-content:center;
+    padding: auto;
+`
+
+
+const TimeDot = styled.div`
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 1.5px solid ${({theme}) => theme.colors.mainColor3};
+    background-color: ${({theme}) => theme.colors.white};
+
+
+    position: absolute;
+    z-index: 2;
+    top:22px;
+    transform:translateX(-50%);
+    left:20%;
+    @media screen and (min-width: ${({theme}) => theme.size.validWidth}px){
+        left:50%;
+    }
+
+    
+`
+
+const Blank = styled.div`
+    width:50%;
+    height:auto;
+
+
+    @media screen and (max-width: ${({theme}) => theme.size.validWidth}px){
+        display:none;
+    }
+`
+
 
 const Timeline = () => {
 
@@ -64,8 +102,10 @@ const Timeline = () => {
         }
     `
 
-    const data = useStaticQuery(careersQuery).allMarkdownRemark.edges;
-    const metadata = useStaticQuery(careersQuery).markdownRemark.frontmatter;
+    const queryResult = useStaticQuery(careersQuery)
+    const data = queryResult.allMarkdownRemark.edges;
+    const metadata = queryResult.markdownRemark.frontmatter;
+
 
     return(
         <Container>
@@ -77,16 +117,36 @@ const Timeline = () => {
                     data.map((obj) => {
                         const item = obj.node.frontmatter;
                         return(
-                                <CareerCard
-                                    // singleLine={
-                                    //     true
-                                    // }
-                                    title={item.title}
-                                    desc={item.desc}
-                                    isLeft={item.careerType==='experience'?false:true}
-                                    startDate={item.startDate}
-                                    endDate={item.endDate}
-                                />
+                                <LayerWrapper>
+                                {
+                                    item.careerType!=='experience'
+                                    ? (
+                                        <>
+                                            <CareerCard
+                                                isLeft={item.careerType==='experience'?false:true}
+                                                title={item.title}
+                                                desc={item.desc}
+                                                startDate={item.startDate}
+                                                endDate={item.endDate}
+                                            />
+                                            <TimeDot/>
+                                            <Blank/>
+                                        </>
+                                    )
+                                    : (
+                                        <>
+                                            <Blank/>
+                                            <TimeDot/>
+                                            <CareerCard
+                                                title={item.title}
+                                                desc={item.desc}
+                                                startDate={item.startDate}
+                                                endDate={item.endDate}
+                                            />
+                                        </>
+                                    )
+                                }
+                            </LayerWrapper>
                         )
                     })
                 }

@@ -33,7 +33,6 @@ const IconWrapper = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    // margin-bottom: 6px;
 
 `
 
@@ -70,9 +69,7 @@ const ViewMore = styled.a`
 
     
     ${Wrapper}:hover & {
-        // animation: ${translateLoop} 1s 0s ease-in-out infinite;
         animation: ${translateLoop} .7s 0s linear infinite;
-
     }
 
 `
@@ -88,7 +85,6 @@ const SkillCard = (props) => {
             <IconWrapper>
                 <Icon 
                     name={props.icon}
-                    // color={({theme}) => theme.colors.gray1}
                     width="30" 
                     height="30"
                 />
