@@ -1,81 +1,77 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby';
 import styled from 'styled-components';
 import Container from '../ui/Container'
-import ProjectCard from '../ui/ProjectCard'
-import IntroTitle from '../ui/IntroTitle'
-import Saparator from '../ui/Saparator'
+import PostCard from '../ui/PostCard'
+import Link from 'gatsby-link'
 
 const Wrapper = styled.div`
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-flow: row wrap;
+    align-content: space-between;
+    margin: 20px auto;
 `
 
 const CardWrapper = styled.div`
-    margin: 40px auto;
+    margin: 20px auto;
 `
 
 const Blog = (props) => {
 
-    // const workQuery = graphql`
-    //     query{
-    //         allMarkdownRemark(filter: {frontmatter: {category: {eq: "work"}}}) {
-    //             edges {
-    //                 node {
-    //                         frontmatter {
-    //                             thumbnail{
-    //                                 childImageSharp{
-    //                                     fluid{
-    //                                         ...GatsbyImageSharpFluid
-    //                                     }
-    //                                 }
-    //                             }
-    //                             title
-    //                             team
-    //                             desc
-    //                             stack
-    //                         }
-    //                     }
-    //                 }
-    //         }
-    //         markdownRemark(frontmatter: {category: {eq: "work metadata"}}) {
-    //             frontmatter {
-    //                 title
-    //             }
-    //         }
-    //     }
-    // `
+    const blogQuery = graphql`
+        query{
+            allMarkdownRemark(
+                filter: {frontmatter: {category: {eq: "blog"}, published: { eq: true } }}
+                sort: { fields: frontmatter___date, order: DESC }){
+                edges {
+                    node {
+                        id
+                        html
+                        frontmatter {
+                            slug
+                            cover{
+                                childImageSharp{
+                                    fluid{
+                                        ...GatsbyImageSharpFluid
+                                    }
+                                }
+                            }
+                            title
+                            desc
+                            date
+                            }
+                        }
+                    }
+            }
+        }
+    `
 
-    // const queryResult = useStaticQuery(workQuery)
-    // const metadata = queryResult.markdownRemark.frontmatter;
-    // const data = queryResult.allMarkdownRemark.edges;
+    const queryResult = useStaticQuery(blogQuery)
+    const data = queryResult.allMarkdownRemark.edges;
 
     return(
         <Container>
-            {/* <IntroTitle 
-                title={metadata.title}
-                isLeft={true}
-            />
-            <Saparator isLeft={true}/>
             <Wrapper>
             {
                 data.map((obj) => {
                     const item = obj.node.frontmatter;
                     return(
-                        <CardWrapper>
-                            <ProjectCard
-                                thumbnail={item.thumbnail}
-                                title={item.title}
-                                team={item.team}
-                                desc={item.desc}
-                                stack={item.stack}              
-                            />
+
+                        <CardWrapper to={item.slug}>
+                            <Link to={item.slug}>
+                                <PostCard
+                                    cover={item.cover.childImageSharp.fluid}
+                                    title={item.title}
+                                    desc={item.desc}
+                                    date={item.date}              
+                                />
+                            </Link>
                         </CardWrapper>
+
                     )
                 })
             }
-            </Wrapper> */}
+            </Wrapper>
         </Container>
     );
 

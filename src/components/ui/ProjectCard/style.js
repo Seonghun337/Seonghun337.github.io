@@ -4,14 +4,16 @@ import Image from "gatsby-image"
 
 export const Wrapper = styled.div`
     width: 600px;
+    @media screen and (max-width: ${({theme}) => theme.size.validWidth}px){
+        width: 330px;
+    }
     height: 300px;
     display: flex;
-
 
     padding: 25px 30px;
     background-color: white;
 
-    margin: 0 auto;
+    margin:0 auto;
     box-shadow: 0 3px 10px gray;
     box-sizing: border-box;
 
@@ -37,15 +39,26 @@ export const Wrapper = styled.div`
 export const ThumbnailBox = styled(Image)`
     width: 50%;
     background-color: gray;
+
+    @media screen and (max-width: ${({theme}) => theme.size.validWidth}px){
+        display:none;
+    }
 `
 
 export const CenterPadding = styled.div`
     width: 30px;
     height: 100%;
+
+    @media screen and (max-width: ${({theme}) => theme.size.validWidth}px){
+        display:none;
+    }
 `
 
 export const ContentBox = styled.div`
     width: 50%;
+    @media screen and (max-width: ${({theme}) => theme.size.validWidth}px){
+        width: 100%;
+    }
 `
 
 export const TitleBox = styled.div`

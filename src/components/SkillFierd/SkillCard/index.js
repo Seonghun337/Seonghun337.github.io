@@ -28,7 +28,7 @@ const IconWrapper = styled.div`
     width: 40px;
     height: 40px;
     border-radius:50%;    
-    border: 1px solid ${({theme}) => theme.colors.mainColor2};
+    border: 1px solid ${({theme}) => theme.colors.mainColor1};
     color: ${({theme}) => theme.colors.gray2};
     display: flex;
     justify-content: center;

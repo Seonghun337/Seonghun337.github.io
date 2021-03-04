@@ -1,11 +1,16 @@
 ---
 category: 'blog'
 cover: './cover.jpg'
-title: 'Blog Post 2'
-description: 'Mauris neque libero, aliquet vel mollis nec, euismod sed tellus. Mauris convallis dictum elit id volutpat.'
+title: '파이썬 데이터마이닝 도전기 - 텐서플로우
+로우 사용하기 (1/2)'
+desc: '가진 때에, 따뜻한 보이는 품에 영락과 긴지라 청춘 
+그들은 있다. 남는 가치를 것이다. 인생에 몸이 
+가진 때에, 따뜻한 보이는 품에 영락
+스며들'
 date: '2019-12-24'
 tags: ['JavaScript', 'React']
 published: true
+slug: '/Blog/Study/blog-post-2'
 ---
 
 _Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat._.

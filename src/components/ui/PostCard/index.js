@@ -6,25 +6,22 @@ const PostCard = (props) => {
     return(
         <Styled.Wrapper>
 
-            {/* <Styled.ContentBox>
+            <Styled.CoverBox fluid={props.cover}/>
+
+            {/* <Styled.HeaderBox> */}
                 <Styled.TitleBox>{props.title}</Styled.TitleBox>
-                <Styled.TeamBox>with {props.team}</Styled.TeamBox>
-                <Styled.DescBox>{props.desc}</Styled.DescBox>
-                <Styled.StackBox>{props.stack}</Styled.StackBox>
-                <Styled.ViewMore>자세히보기
-                    <Icon
-                        name="ChevronRight"
-                        width="12"
-                        height="12"
-                    />
-                </Styled.ViewMore>
-            </Styled.ContentBox>
-            <Styled.CenterPadding/>
-            <Styled.ThumbnailBox 
-                fluid={props.thumbnail.childImageSharp.fluid}
-                alt={props.title}
-            /> */}
-            <div>hello</div>
+                <Styled.DateBox>{props.date}</Styled.DateBox>
+            {/* </Styled.HeaderBox> */}
+
+            <Styled.DescBox>{props.desc}</Styled.DescBox>
+
+            <Styled.ViewMore>Read more
+                <Icon
+                    name="ChevronRight"
+                    width="6"
+                    height="6"
+                />
+            </Styled.ViewMore>
         </Styled.Wrapper>
     );
 

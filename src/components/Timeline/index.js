@@ -26,7 +26,7 @@ const VerticalLine = styled.div`
     z-index: 1;
     border: solid 0.5px;
     position: absolute;
-    color: ${({theme}) => theme.colors.mainColor3};
+    color: ${({theme}) => theme.colors.mainColor2};
 
     left:20%;
     @media screen and (min-width: ${({theme}) => theme.size.validWidth}px){
@@ -50,7 +50,7 @@ const TimeDot = styled.div`
     width: 12px;
     height: 12px;
     border-radius: 50%;
-    border: 1.5px solid ${({theme}) => theme.colors.mainColor3};
+    border: 1.5px solid ${({theme}) => theme.colors.mainColor2};
     background-color: ${({theme}) => theme.colors.white};
 
 

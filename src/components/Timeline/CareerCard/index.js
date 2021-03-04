@@ -21,7 +21,7 @@ const Date = styled.div`
     width:146px;
     height: 17px;
     border-radius: 9px;
-    border: 1px solid ${({theme}) => theme.colors.mainColor2};
+    border: 1px solid ${({theme}) => theme.colors.mainColor1};
 
     display:flex;
     justify-content:center;

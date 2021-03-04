@@ -5,6 +5,7 @@
   "version": "0.1.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
+    "@styled-icons/octicons": "^10.28.0",
     "Babel": "^0.0.1",
     "babel-plugin-styled-components": "^1.12.0",
     "bootstrap": "^4.6.0",
@@ -27,6 +28,8 @@
     "react-dom": "^16.8.0",
     "react-helmet": "^6.1.0",
     "react-responsive": "^8.2.0",
+    "react-slick": "^0.28.0",
+    "slick-carousel": "^1.8.1",
     "styled-components": "^5.2.1"
   },
   "devDependencies": {

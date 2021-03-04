@@ -11,7 +11,7 @@ export const StyledContainer = styled.div
 export const Background = styled.div
 `
     width: 100%;
-    background: ${props => props.background? ({theme}) => theme.colors.mainColor : ({theme}) => theme.colors.white };
+    background: ${props => props.background? ({theme}) => theme.colors.background : ({theme}) => theme.colors.white };
 
 
     // border: 1px solid;

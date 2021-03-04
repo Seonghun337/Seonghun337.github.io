@@ -8,11 +8,11 @@ const colors = {
     black: "#000000",
     gray1: "#CCCCCC",
     gray2: "#606060",
-    // backgroundColor: "#FFFFFF",
     
-    mainColor: "#F2FAFF",
-    mainColor2: "#5BFFF4",
-    mainColor3: "#36AEFF",
+    background: "#F2FAFF",
+
+    mainColor1: "#5BFFF4", //light
+    mainColor2: "#36AEFF", //dark
     
     fontColor: "#000000",
     fontColorLight: "#7D7D7D"

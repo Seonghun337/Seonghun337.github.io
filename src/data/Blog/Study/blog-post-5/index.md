@@ -6,6 +6,7 @@ description: 'Mauris neque libero, aliquet vel mollis nec, euismod sed tellus. M
 date: '2020-02-03'
 tags: ['Mobile', 'React Native']
 published: true
+slug: '/Blog/Study/blog-post-5'
 ---
 
 _Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat._.

@@ -12,10 +12,11 @@ const Wrapper = styled.div`
     align-items: center;
     // justify-content: space-around;
     // padding: 60px auto;
+    margin: 40px auto;
 `
 
 const CardWrapper = styled.div`
-    margin: 40px auto;
+    margin-top: 60px;
 `
 
 const Works = (props) => {

@@ -1,36 +1,62 @@
 import styled from 'styled-components';
 import { Link } from 'gatsby';
+import Image from 'gatsby-image';
+import * as Icon from 'react-bootstrap-icons';
+export const Wrapper = styled.div`
+
+
+`
 
 export const NavBar = styled.div
 `
-
     width: 100%;
-    height: 90px;
 
-    margin: 0;
+    padding-top: 25px;
+    padding-bottom:15px;
 
 
     display: flex;
-    flex-direction:row;
-    justify-content:flex-end;
-    align-items:flex-end;
+    flex-flow: row wrap;
+    justify-content:space-between;
 
-    padding-bottom:8px;
+
 `;
 
+export const NavItemWrapper = styled.div`
+
+    & a {
+        margin-left:52px;
+    }
+
+    @media screen and (max-width: ${({theme}) => theme.size.validWidth}px){
+        width:100%;
+
+        display:flex;
+
+        flex-direction:column;
+        align-items:flex-start;
+
+
+        & a {
+            margin: 6px 0;
+            margin-left: 35px;
+        }
+
+        ${({ open }) => !open && `display:none`};
+    }
+`
 
 export const NavItem = styled(Link)
 `
     font-size:16px;
+    font-weight:300;
     display:inline-block;
-    margin-left:52px;
+
     margin-bottom:8px;
 
 
     vertical-align: middle;
     transform: perspective(1px) translateZ(0);
-    // box-shadow: 0 0 1px rgba(0,0,0,0);
-    // position: relative;
 
     & ~ .active:before {
         right:0;
@@ -59,5 +85,23 @@ export const NavItem = styled(Link)
     }
 `
 
+export const ToogleButton = styled(Icon.List)`
+    
+    @media screen and (min-width: ${({theme}) => theme.size.validWidth}px){
+        display:none;
+    }
 
-// export const Logo = styled()
+    margin-right: 15px;
+    width: 30px;
+
+    height: 30px;
+
+`
+
+
+export const Logo = styled(Image)`
+
+    width: 150px;
+    margin-left: 15px;
+
+`
