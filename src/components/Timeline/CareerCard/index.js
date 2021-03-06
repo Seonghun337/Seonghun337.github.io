@@ -1,5 +1,4 @@
-import React, { Component } from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
+import React from 'react';
 import styled from 'styled-components';
 
 
@@ -79,7 +78,7 @@ const CareerCard = (props) => {
             {
             props.isLeft
             ? (<Date isLeft={true}>{props.startDate}</Date>)
-            : (<Date>{props.startDate} - {props.endDate}</Date>)
+            : (<Date>{props.startDate} - {props.endDate==null?'present':props.endDate}</Date>)
             }
             <Title isLeft={props.isLeft}>
                 {props.title}   

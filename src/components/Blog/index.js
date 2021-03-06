@@ -22,11 +22,13 @@ const Blog = (props) => {
         query{
             allMarkdownRemark(
                 filter: {frontmatter: {category: {eq: "blog"}, published: { eq: true } }}
-                sort: { fields: frontmatter___date, order: DESC }){
+                sort: { fields: frontmatter___date, order: DESC }
+                ){
                 edges {
                     node {
                         id
                         html
+                        
                         frontmatter {
                             slug
                             cover{
@@ -57,7 +59,7 @@ const Blog = (props) => {
                     const item = obj.node.frontmatter;
                     return(
 
-                        <CardWrapper to={item.slug}>
+                        <CardWrapper >
                             <Link to={item.slug}>
                                 <PostCard
                                     cover={item.cover.childImageSharp.fluid}

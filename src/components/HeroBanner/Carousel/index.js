@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
 import Slider from 'react-slick'
-import Helmet from 'react-helmet';
 import styled from 'styled-components';
-import * as Icon from 'react-bootstrap-icons';
 import './__slick.css';
 import './__slick-theme.css';
 

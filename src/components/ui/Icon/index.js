@@ -1,10 +1,9 @@
-import React, { Component } from 'react'
-import styled from 'styled-components';
+import React from 'react'
 import * as I from 'react-bootstrap-icons';
 
 const Icon = (props) => {
     // alert(props.name)
-    if (props.name == "Globe"){
+    if (props.name === "Globe"){
         return (
             <I.Globe
                 width = {props.width}
@@ -12,7 +11,7 @@ const Icon = (props) => {
             />
         );
     }
-    else if(props.name == "ChevronRight"){
+    else if(props.name === "ChevronRight"){
         return(
             <I.ChevronRight
                 width = {props.width}

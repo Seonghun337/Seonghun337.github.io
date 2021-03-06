@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import styled from 'styled-components';
 import Container from '../ui/Container';
@@ -18,21 +18,23 @@ const SkillFierd = () => {
 
     const skillsQuery = graphql`
         query{
-            allMarkdownRemark(filter: {frontmatter: {category: {eq: "skillField"}}}) {
-                edges {
-                node {
-                        frontmatter {
-                            title
-                            desc
-                            icon
+            allMarkdownRemark(
+                filter: {frontmatter: {category: {eq: "skillField"}}}
+                sort: {fields: fileAbsolutePath})
+                {
+                    edges {
+                        node {
+                                frontmatter {
+                                    title
+                                    desc
+                                    icon
+                                }
+                            }
                         }
-                    }
                 }
-            }
             markdownRemark(frontmatter: {category: {eq: "skillField metadata"}}) {
                 frontmatter {
                     title
-                    
                 }
             }
         }

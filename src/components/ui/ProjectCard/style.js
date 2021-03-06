@@ -20,7 +20,7 @@ export const Wrapper = styled.div`
     
     ${
         (props) => {
-            if(props.hoverActive==true){
+            if(props.hoverActive===true){
                 return `
                     &:hover{
                         transform: scale(1.03,1.03);
@@ -73,10 +73,16 @@ export const TeamBox = styled.div`
     text-align: right;
 `
 
+export const DateBox = styled.div`
+    font-size: 12px;
+    font-weight: 100;
+    margin-top: 24px;
+`
+
 export const DescBox = styled.div`
     font-size: 12px;
     font-weight: 100;
-    margin: 40px 0 16px 0;
+    margin: 16px 0 16px 0;
     line-height: 19px;
 `
 

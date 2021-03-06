@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import * as Styled from './style'
 import Icon from '../Icon'
 

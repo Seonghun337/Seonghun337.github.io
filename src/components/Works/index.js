@@ -1,17 +1,13 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby';
 import styled from 'styled-components';
 import Container from '../ui/Container'
 import ProjectCard from '../ui/ProjectCard'
-import IntroTitle from '../ui/IntroTitle'
-import Saparator from '../ui/Saparator'
 
 const Wrapper = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    // justify-content: space-around;
-    // padding: 60px auto;
     margin: 40px auto;
 `
 
@@ -51,16 +47,11 @@ const Works = (props) => {
     `
 
     const queryResult = useStaticQuery(workQuery)
-    const metadata = queryResult.markdownRemark.frontmatter;
+    // const metadata = queryResult.markdownRemark.frontmatter;
     const data = queryResult.allMarkdownRemark.edges;
 
     return(
         <Container>
-            {/* <IntroTitle 
-                title={metadata.title}
-                isLeft={true}
-            />
-            <Saparator isLeft={true}/> */}
             <Wrapper>
             {
                 data.map((obj) => {

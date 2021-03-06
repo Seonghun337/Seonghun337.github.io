@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import styled from 'styled-components';
 import Container from '../ui/Container';
@@ -81,15 +81,18 @@ const Timeline = () => {
 
     const careersQuery = graphql`
         query{
-            allMarkdownRemark(filter: {frontmatter: {category: {eq: "career"}}}) {
+            allMarkdownRemark(
+                filter: {frontmatter: {category: {eq: "career"}}}
+                sort: { fields: frontmatter___startDate, order: DESC }
+                ) {
                 edges {
                 node {
                         frontmatter {
                             title
                             desc
                             careerType
-                            startDate
-                            endDate
+                            startDate(formatString: "YYYY MMM") 
+                            endDate(formatString: "YYYY MMM")
                         }
                     }
                 }

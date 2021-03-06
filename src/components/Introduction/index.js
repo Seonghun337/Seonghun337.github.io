@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import * as Styled from "./style";
 import Container from "../ui/Container";
 import Saparator from "../ui/Saparator";
@@ -31,8 +31,6 @@ const Introduction = () => {
             <Title title={data.title}></Title>
             <Saparator />
             <Styled.Wrapper>
-                {/* <Img fluid={data.ProfileImage}></Img> */}
-                {/* <Img fluid={data.profileImage.childImageSharp.fluid}></Img> */}
                 <Styled.ProfileImage
                     fluid={data.profileImage.childImageSharp.fluid}
                     alt={data.title}

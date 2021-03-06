@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import * as Styled from './style'
 import Icon from '../Icon'
 
@@ -8,6 +8,7 @@ const ProjectCard = (props) => {
             <Styled.ContentBox>
                 <Styled.TitleBox>{props.title}</Styled.TitleBox>
                 <Styled.TeamBox>with {props.team}</Styled.TeamBox>
+                <Styled.DateBox>2020.03 - 2021.05</Styled.DateBox>
                 <Styled.DescBox>{props.desc}</Styled.DescBox>
                 <Styled.StackBox>{props.stack}</Styled.StackBox>
                 <Styled.ViewMore>자세히보기

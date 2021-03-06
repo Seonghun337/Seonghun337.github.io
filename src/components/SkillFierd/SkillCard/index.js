@@ -1,6 +1,5 @@
-import React, { Component } from 'react';
+import React from 'react';
 import styled, { keyframes } from 'styled-components';
-import Image from "gatsby-image"
 import Icon from "../../ui/Icon"
 
 const Wrapper = styled.div`

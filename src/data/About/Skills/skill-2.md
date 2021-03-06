@@ -1,6 +1,6 @@
 ---
 category: 'skillField'
-title: 'Web Engineering'
+title: 'Data Science'
 desc: 'HTML, CSS, JavaScript, Reactjs'
 icon: 'Globe'
 ---

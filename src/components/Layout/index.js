@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Helmet } from 'react-helmet';
 import styled, { ThemeProvider } from 'styled-components';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -26,12 +25,11 @@ class Layout extends Component{
                         exit={{ opacity: 0 }}
                         transition={{ delay: 0.2 }}
                     >
-                        {/* <StyledLayout> */}
 
-                                {this.props.children}
-                            <Footer/>
-                        {/* </StyledLayout> */}
+                        {this.props.children}
+                        <Footer/>
                     </motion.div>
+
                 </AnimatePresence>
             </ThemeProvider>
         );

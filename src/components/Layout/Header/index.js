@@ -1,9 +1,7 @@
-import React, { Component, useState } from 'react'
+import React, { useState } from 'react'
 import { useStaticQuery, graphql } from 'gatsby';
 import * as Styled from "./style";
 import Container from "../../ui/Container"
-// import { Menu } from '@styled-icons/octicons'
-
 
 const NavItems = [
     {
@@ -25,7 +23,7 @@ const Header = () => {
         query {
             placeholderImage: file(relativePath: { eq: "Logo.png" }) {
                 childImageSharp {
-                    fixed(width:150) {
+                    fixed(width:130) {
                         ...GatsbyImageSharpFixed
                     }
                 }
@@ -45,12 +43,8 @@ const Header = () => {
                 <Styled.NavBar open={open}>
                     <Styled.Logo fixed={LogoImage} alt={'logo'}/>
 
-                    {/* <Styled.TT/> */}
-                    <Styled.ToogleButton open={open} onClick={() => setOpen(!open)}>
-                        {/* <span />
-                        <span />
-                        <span /> */}
-                    </Styled.ToogleButton>
+
+                    <Styled.ToogleButton open={open} onClick={() => setOpen(!open)}/>
 
                     <Styled.NavItemWrapper open={open}>
 
