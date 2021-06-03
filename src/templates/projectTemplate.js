@@ -5,20 +5,20 @@ import Container from "../components/ui/Container"
 import 'github-markdown-css'
 
 const postTemplate = ({data}) => {
-  const post = data.markdownRemark; // data.markdownRemark holds your post data
+  const project = data.markdownRemark; // data.markdownRemark holds your post data
   // const { frontmatter, html } = markdownRemark
   return (
     <Layout>
       <Container>
         <div className="blog-post-container">
           <div className="blog-post markdown-body">
-            <h1>{post.frontmatter.title}</h1>
-            <h2>{post.frontmatter.date}</h2>
+            <h1>{project.frontmatter.title}</h1>
+            <h2>{project.frontmatter.date}</h2>
 
              
             <div
               className="blog-post-content"
-              dangerouslySetInnerHTML={{ __html: post.html }}
+              dangerouslySetInnerHTML={{ __html: project.html }}
             />
           </div>
         </div>

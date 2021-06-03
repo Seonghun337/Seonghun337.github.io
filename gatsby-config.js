@@ -44,20 +44,10 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `post-pages`,
-        path: `${__dirname}/src/data/blog`,
-      }
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
         name: `project-pages`,
         path: `${__dirname}/src/data/work`,
       }
     },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
     `gatsby-transformer-remark`,
     

@@ -3,6 +3,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 import styled from 'styled-components';
 import Container from '../ui/Container'
 import ProjectCard from '../ui/ProjectCard'
+import Link from 'gatsby-link'
 
 const Wrapper = styled.div`
     display: flex;
@@ -19,9 +20,12 @@ const Works = (props) => {
 
     const workQuery = graphql`
         query{
-            allMarkdownRemark(filter: {frontmatter: {category: {eq: "work"}}}) {
+            allMarkdownRemark(filter: {frontmatter: {category: {eq: "project"}}}) {
                 edges {
                     node {
+                            fields{
+                                slug
+                            }
                             frontmatter {
                                 thumbnail{
                                     childImageSharp{
@@ -38,16 +42,10 @@ const Works = (props) => {
                         }
                     }
             }
-            markdownRemark(frontmatter: {category: {eq: "work metadata"}}) {
-                frontmatter {
-                    title
-                }
-            }
         }
     `
 
     const queryResult = useStaticQuery(workQuery)
-    // const metadata = queryResult.markdownRemark.frontmatter;
     const data = queryResult.allMarkdownRemark.edges;
 
     return(
@@ -55,18 +53,20 @@ const Works = (props) => {
             <Wrapper>
             {
                 data.map((obj) => {
-                    const item = obj.node.frontmatter;
+                    const item = obj.node;
                     return(
-                        <CardWrapper>
-                            <ProjectCard
-                                hoverActive={true}
-                                thumbnail={item.thumbnail}
-                                title={item.title}
-                                team={item.team}
-                                desc={item.desc}
-                                stack={item.stack}              
-                            />
-                        </CardWrapper>
+                        <Link to={item.fields.slug}>
+                            <CardWrapper>
+                                <ProjectCard
+                                    hoverActive={true}
+                                    thumbnail={item.frontmatter.thumbnail}
+                                    title={item.frontmatter.title}
+                                    team={item.frontmatter.team}
+                                    desc={item.frontmatter.desc}
+                                    stack={item.frontmatter.stack}              
+                                />
+                            </CardWrapper>
+                        </Link>
                     )
                 })
             }

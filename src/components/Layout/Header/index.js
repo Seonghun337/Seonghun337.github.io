@@ -11,10 +11,6 @@ const NavItems = [
     {
       title: 'Work',
       slug: '/work/'
-    },
-    {
-      title: 'Blog',
-      slug: '/blog/'
     }
 ];
 

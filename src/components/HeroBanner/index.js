@@ -6,14 +6,17 @@ import Container from "../ui/Container"
 import Carousel from "./Carousel"
 import ProjectCard from "../ui/ProjectCard"
 import Saparator from "../ui/Saparator"
-
+import Link from 'gatsby-link'
 
 const HeroBanner = () => {
     const bannerQuery = graphql`
         query{
-            allMarkdownRemark(filter: {frontmatter: {category: {eq: "work"}}}) {
+            allMarkdownRemark(filter: {frontmatter: {category: {eq: "project"}}}) {
                 edges {
                     node {
+                            fields{
+                                slug
+                            }
                             frontmatter {
                                 thumbnail{
                                     childImageSharp{
@@ -50,16 +53,18 @@ const HeroBanner = () => {
                     <Carousel>
                         {
                             data.map((obj) => {
-                                const item = obj.node.frontmatter;
+                                const item = obj.node;
                                 return(
                                     <CarouselItemWrapper>
-                                        <ProjectCard
-                                            thumbnail={item.thumbnail}
-                                            title={item.title}
-                                            team={item.team}
-                                            desc={item.desc}
-                                            stack={item.stack}
-                                        />
+                                        <Link to={item.fields.slug}>
+                                            <ProjectCard
+                                                thumbnail={item.frontmatter.thumbnail}
+                                                title={item.frontmatter.title}
+                                                team={item.frontmatter.team}
+                                                desc={item.frontmatter.desc}
+                                                stack={item.frontmatter.stack}
+                                            />
+                                        </Link>
                                     </CarouselItemWrapper>
                                 )
                             })
